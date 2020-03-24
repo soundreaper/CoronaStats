@@ -3,6 +3,9 @@
 <div id="content">
     <div class="card text-center container">
         <div class="card-body">
+            <h1 style="font-size: 72px">CONFIRMED DEATHS</h1>
+            <hr class="my-4">
+            <h2>Select a Country to View Graph:</h2>
             <form action="/deaths" method="POST" enctype="multipart/form-data">
             <select id="mySelect" name="countries">
                 <option value="{{country_list[0]}}" selected>{{country_list[0]}}</option>
@@ -11,13 +14,12 @@
                 {% endfor %}
             </select>
             <input type="submit" value="Submit">
-                {% if graph %}
-                <img src="data:;base64,{{ graph }}"/>
-                {% endif %}
+            {% if graph %}
+            <img src="data:;base64,{{ graph }}"/>
+            {% endif %}
             </form>
-            <h1 style="font-size: 72px">COVID-19</h1>
             <hr class="my-4">
-            <p class="card-text">Confirmed Number of Deaths: {{deaths_num}}</p>
+            <p class="card-text" style="font-size: 40px">CONFIRMED DEATHS: {{deaths_num}}</p>
         </div>
     </div>
 </div>
