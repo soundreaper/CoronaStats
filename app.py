@@ -16,7 +16,8 @@ new_df_deaths = set_index_to_country_deaths.transpose()
 
 def get_country_list():
     df_confirmed = pd.read_csv('time_series_covid19_confirmed_global.csv')
-    country_list = df_confirmed['Country/Region'].tolist().insert(0,' ')
+    country_list = df_confirmed['Country/Region'].tolist()
+    country_list.insert(0," ")
     return country_list
 
 def get_confirmed_sum():
