@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+
+<div id="content">
+    <div class="card text-center container">
+        <div class="card-body">
+            <form action="/deaths" method="POST" enctype="multipart/form-data">
+            <select id="mySelect" name="countries">
+                <option value="{{country_list[0]}}" selected>{{country_list[0]}}</option>
+                {% for country in country_list[1:] %}
+                <option value="{{country}}">{{country}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+                {% if graph %}
+                <img src="data:;base64,{{ graph }}"/>
+                {% endif %}
+            </form>
+            <h1 style="font-size: 72px">COVID-19</h1>
+            <hr class="my-4">
+            <p class="card-text">Confirmed Number of Deaths: {{deaths_num}}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
