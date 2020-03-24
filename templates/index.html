@@ -1,49 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 
-<!-- Sidebar -->
-<nav id="sidebar">
-    <div class="sidebar-header text-center">
-        <a class="text-warning nav-link font-weight-bold" href="#" data-target="#carouselExampleControls" data-slide-to="0" style="font-size: 24px">Home</a>
-    </div>
-    <ul class="list-unstyled components text-center text-danger">
-        <li>
-            <a class="text-warning nav-link" href="#" data-target="#carouselExampleControls" data-slide-to="1">Confirmed Cases</a>
-        </li>
-        <li>
-            <a class="text-warning nav-link" href="#" data-target="#carouselExampleControls" data-slide-to="2">Deaths</a>
-        </li>
-    </ul>
-</nav>
-
 <div id="content">
-<div id="carouselExampleControls" class="carousel slide" style="padding-top: 40px">
+<div id="carouselExampleControls" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
       <div class="card text-center container">
         <div class="card-body">
           <h1 style="font-size: 72px">COVID-19</h1>
           <hr class="my-4">
-          <p class="card-text">Use the sidebar on the left to access different sections!</p>
+          <p class="card-text">TOTAL NUMBER OF CASES GLOBALLY: {{confirmed_sum}}</p>
         </div>
       </div>
     </div>
     <div class="carousel-item text-center">
-      <div class="card text-center container">
-        <div class="card-body">
-          <h1 style="font-size: 72px">COVID-19</h1>
-          <hr class="my-4">
-          <p class="card-text">Use the sidebar on the left to access different sections!</p>
-        </div>
-      </div>
     </div>
     <div class="carousel-item text-center">
-      <div class="card text-center container">
-        <div class="card-body">
-          <h1 style="font-size: 72px">COVID-19</h1>
-          <hr class="my-4">
-          <p class="card-text">Use the sidebar on the left to access different sections!</p>
-        </div>
-      </div>
     </div>
   </div>
 </div>
