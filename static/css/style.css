@@ -11,46 +11,11 @@ body {
   padding-left: 20px;
 }
 
-.jumbotron {
-  background-color: transparent !important;
+#content {
+  padding-top: 40px;
 }
 
 .padding-top {
   padding-top: 5rem;
   height: 100%;
-}
-
-.wrapper {
-  display: flex;
-  width: 100%;
-  align-items: stretch;
-}
-
-#sidebar {
-    min-width: 170px;
-    max-width: 170px;
-    padding: 20px;
-    background: #222;
-    color: #fff;
-}
-
-.sidebar-header {
-    background: #222;
-}
-
-#sidebar ul.components {
-    padding: 20px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-#content {
-    width: 100%;
-    padding: 20px;
-    min-height: 100vh;
-    transition: all 0.3s;
 }
