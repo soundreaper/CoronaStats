@@ -16,7 +16,7 @@ new_df_deaths = set_index_to_country_deaths.transpose()
 
 def get_country_list():
     df_confirmed = pd.read_csv('time_series_covid19_confirmed_global.csv')
-    country_list = df_confirmed['Country/Region'].tolist()
+    country_list = df_confirmed['Country/Region'].tolist().insert(0,' ')
     return country_list
 
 def get_confirmed_sum():
@@ -55,7 +55,7 @@ def confirmed():
         confirmed_num = get_confirmed_num(country)
         bytes_obj = do_plot(country, "confirmed")
         image = b64encode(bytes_obj.getbuffer()).decode("utf-8")
-        return render_template('confirmed.html', country_list=country_list, graph=image, confirmed_num=confirmed_num)
+        return render_template('confirmed.html', country_list=country_list, graph=image, confirmed_num=confirmed_num, country=country)
     return render_template('confirmed.html', country_list=country_list)
 
 @app.route('/deaths', methods=['GET','POST'])
@@ -69,7 +69,7 @@ def deaths():
         deaths_num = get_deaths_num(country)
         bytes_obj = do_plot(country, "deaths")
         image = b64encode(bytes_obj.getbuffer()).decode("utf-8")
-        return render_template('deaths.html', country_list=country_list, graph=image, deaths_num=deaths_num)
+        return render_template('deaths.html', country_list=country_list, graph=image, deaths_num=deaths_num, country=country)
     return render_template('deaths.html', country_list=country_list)
 
 @app.route('/login')
